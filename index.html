@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jannie Hayeon</title>
+    <style>
+    
+        @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquarda+Bastarda+9&display=swap');        
+        @font-face {
+            font-family: 'PfStardust30';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/PFStardust.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+
+            unicode-range: U+AC00-D7A3;
+            font-size: smaller;
+        }
+
+        body {
+            font-family: 'PfStardust30',"Jacquarda Bastarda 9", serif;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 1.8rem;
+            background-color: rgb(245, 245, 245);
+            margin: 0;
+            padding: 0; 
+            color: #2e24ff;
+            cursor:default;
+            overflow: hidden;
+        }
+        /*.Eczar-text {
+            font-family: "Jacquarda Bastarda 9", serif;
+            font-weight: 400;
+            font-style: normal;
+            position: relative;
+            top: 1.4px;
+            font-size-adjust: 0.58;
+        }*/
+
+        ::selection {
+            color: yellow;
+            background-color:cornflowerblue;
+        }
+
+        h1{
+            font-family: "Jacquard 12", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 12px;
+            font-size: 6rem;
+            text-align: center;
+            text-overflow: normal;
+            text-wrap: nowrap;
+            background-color: transparent;
+
+        }
+
+        h2{
+            margin-top:0;
+            font-size: 3rem;
+            text-align: center;
+            text-overflow: normal;
+        }
+
+        .container-1 {
+            display:grid;
+            max-width: 50%;
+            width: 50%;
+            float: left;
+            height: 100vh;
+            padding-top: 128px;
+            padding-right: 32px;
+            padding-left: 10%;
+            padding-bottom: 32px;
+            overflow-x: scroll;
+            overflow-y: scroll; 
+            overflow: scroll;
+            box-sizing: border-box;
+            border-right:solid 3px #2e24ff;
+            line-height: 120%;
+            letter-spacing: -0.03rem;
+            background-color: transparent;
+
+            place-items: start;
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: minmax(25rem, auto);
+            column-gap: 16px;
+            row-gap: 16px;
+        }
+
+        .container-2 {
+            display:grid;
+            max-width: 50%;
+            width: 50%;
+            float: left;
+            height: 100vh;
+            padding-top: 128px;
+            padding-right: 10%;
+            padding-left: 32px;
+            padding-bottom: 32px;
+            overflow-x: scroll;
+            overflow-y: scroll; 
+            overflow: scroll;
+            box-sizing: border-box;
+            border-left:solid 3px #2e24ff;
+            line-height: 120%;
+            letter-spacing: -0.03rem;
+            background-color: transparent;
+
+            place-items: start;
+            grid-template-columns: repeat(2,1fr);
+            grid-auto-rows: minmax(500px, auto);
+            column-gap: 16px;
+            row-gap: 16px;
+        }
+
+        .item{
+            flex-shrink: 1;
+            background-color: yellow;
+        
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .name{
+            position:fixed;
+            width: 100vw;
+            margin: 0 auto;
+            top:0;
+            background-color: transparent;
+            -ms-user-select: none; 
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 3;
+        }
+
+        .link-ig{
+            font-family: "Jacquard 12", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.4rem;
+            position:fixed;
+            width: auto;
+            bottom:16px;
+            right: 20rem;
+            text-align: right;
+            background-color: transparent;
+            -ms-user-select: none; 
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 2;
+
+        }
+        .link-em{
+            font-family: "Jacquard 12", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.4rem;
+            position:fixed;
+            width: auto;
+            bottom:16px;
+            right: 32px;
+            text-align: right;
+            background-color: transparent;
+            -ms-user-select: none; 
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 2;
+
+        }
+        .info{
+            font-family: "Jacquard 12", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 2.4rem;
+            position:fixed;
+            width: auto;
+            bottom:16px;
+            left: 32px;
+            text-align: right;
+            background-color: transparent;
+            -ms-user-select: none; 
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            z-index: 2;
+        }
+
+        .info-active {
+            color: yellow;
+            background-color:cornflowerblue;
+        }
+
+
+        #info-container{
+            position: fixed;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding-top: 128px;
+            padding-right: 10%;
+            padding-left: 10%;
+            padding-bottom: 32px;
+            color: #2e24ff;
+            
+            z-index: 1;
+            background-color: rgba(245, 245, 245, 0.5);
+            backdrop-filter: blur(1rem);
+        
+
+        }
+
+        .link-ig:hover, .link-em:hover, .info:hover{
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            cursor: pointer;
+        }
+        
+
+        @media screen and (max-width: 1023px) {
+        .container-1{
+        padding-left: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+        }
+        
+        .container-2{
+        padding-right: 32px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+        }
+        .link-ig{
+            right:10rem;
+        }
+        
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="name" ><h1>Test Hello</h1></div>    
+        
+    <div class="container-1">
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2020/04/28/19/36/heart-5106075_960_720.png" alt="" />
+            Pinching Hand, 2025
+        </div>
+        <div class="item">
+            <img src="https://i.ibb.co/3493r17/cat.jpg" alt="고양이"/>
+            Folded Hands, 2025
+        </div>
+        <div class="item">Memix, 2024</div>
+        <div class="item">신규 발급, 2024</div>
+    </div>
+    <div class="container-2">
+        <div class="item">ME after fraME, 2025</div>
+        <div class="item">Caslon Captured, 2025</div>
+        <div class="item">Thank You Gift Bag, 2024</div>
+        <div class="item">SS, 2024</div>
+    </div>
+    
+    <div class="link-ig" onclick="window.open('https://www.instagram.com/hie.works/');">
+        Instagram
+    </div>
+    <div class="link-em" onclick="sendEmail();">
+        Email
+    </div>
+    <div class="info" onclick="infoClick();">
+        About
+    </div>
+    <div id="info-container">
+        안녕하세요. 테스트용 문장입니다.
+    </div>
+    <script>
+
+        /*const cells = document.querySelectorAll('body');
+        cells.forEach(cell => {
+            cell.innerHTML = cell.innerHTML.replace(
+                /([a-zA-Z0-9\s.,!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]+)/g, 
+                '<span class="Eczar-text">$1</span>'
+            );
+        });*/
+
+        function sendEmail() {
+            window.location = "mailto:042jyien@gmail.com";
+        }
+
+        function infoClick() {
+            const mydiv = document.getElementById('info-container');
+            const infoButton = document.querySelector('.info'); // 'About' 버튼 요소를 선택
+
+            // 'About' 버튼에 .info-active 클래스를 추가하거나 제거하여 밑줄을 토글합니다.
+            infoButton.classList.toggle('info-active');
+            
+            // 기존의 자기소개 박스를 보여주거나 숨기는 기능은 그대로 둡니다.
+            if (mydiv.style.display === 'none' || mydiv.style.display === '') {
+                mydiv.style.display = 'block'; 
+            } else {
+                mydiv.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
